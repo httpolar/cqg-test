@@ -1,0 +1,8 @@
+@mixin content-container($max-width: 1200px, $fullWidth: false) {
+  max-width: $max-width;
+  @if ($fullWidth == true) {
+    width: 100%;
+  }
+  margin-left: auto;
+  margin-right: auto;
+}

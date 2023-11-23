@@ -1,0 +1,17 @@
+<div class="pkg-card-header">
+  <h3 class="pkg-card-title">
+    @if (group != null) {
+      <span class="pkg-card-group">{{ group }}/</span>
+    }
+    <span class="pkg-card-name">{{ name }}</span>
+  </h3>
+</div>
+<div class="pkg-card-body">
+  <p class="pkg-card-downloads">
+    <span>{{ humanReadableDownloads }}</span>
+    <app-download-icon style="width: 1.25rem; height: 1.25em" />
+  </p>
+  <p class="pkg-card-dependencies ">
+    {{ humanReadableDependencies }}
+  </p>
+</div>

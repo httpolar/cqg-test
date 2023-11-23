@@ -1,0 +1,22 @@
+<div class="search-input-group">
+  <app-button (click)="getPackages()"><app-arrow-path-icon /></app-button>
+  <app-text-field
+    [placeholder]="'Enter package name'"
+    [value]="searchInput"
+    class="flex-1 w-full"
+  />
+  <app-button variant="danger" (click)="resetSearch()"><app-x-icon /></app-button>
+</div>
+
+<div class="pkg-cards">
+  @for (pkg of filteredPackages(); track pkg.id) {
+    <app-pkg-card
+      [id]="pkg.id"
+      [weeklyDownloads]="pkg.weeklyDownloads"
+      [dependencyCount]="pkg.dependencyCount"
+      (mouseenter)="onPackageMouseEnter(pkg)"
+      (mouseleave)="onPackageMouseLeave(pkg)"
+      [attr.data-highlighted]="highlightedItemDependencies().includes(pkg.id)"
+    ></app-pkg-card>
+  }
+</div>

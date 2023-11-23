@@ -1,0 +1,32 @@
+@import "variables";
+
+@layer components {
+  button {
+    max-height: 2.5rem;
+    box-sizing: border-box;
+    appearance: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    background-color: white;
+    color: $zinc-500;
+    border: 1px solid $zinc-300;
+    border-radius: 4px;
+    padding: 0.5rem 0.5rem;
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+      color: white;
+      background-color: $blue-700;
+      border-color: $blue-700;
+    }
+  }
+
+  button[data-variant="danger"] {
+    &:hover {
+      color: white;
+      background-color: red;
+      border-color: red;
+    }
+  }
+}

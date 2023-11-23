@@ -1,0 +1,81 @@
+@import "variables";
+
+@layer components {
+  :host {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $zinc-300;
+    background-color: white;
+    transition: all 150ms ease-in-out;
+  }
+
+  :host:hover {
+    border-color: $blue-600;
+    background-color: $blue-100;
+  }
+
+  :host[data-highlighted="true"] {
+    background-color: $orange-100;
+    border-color: $orange-600;
+  }
+
+  .pkg-card-header {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: $zinc-300;
+    padding: 0.5rem;
+    transition: all 150ms ease-in-out;
+  }
+
+  :host:hover {
+    .pkg-card-header {
+      border-color: $blue-600;
+    }
+  }
+
+  :host[data-highlighted="true"] { 
+    .pkg-card-header {
+      border-color: $orange-600;
+    }
+  }
+
+  .pkg-card-name {
+    color: $zinc-800;
+  }
+
+  :host:hover {
+    .pkg-card-name {
+      color: $blue-900;
+    }
+  }
+
+  .pkg-card-group {
+    color: $blue-600;
+  }
+
+  .pkg-card-body {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pkg-card-downloads {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .pkg-card-downloads ~ .pkg-card-dependencies {
+    margin-top: 0.5rem;
+    color: $zinc-500;
+  }
+
+  .pkg-card-dependencies {
+    font-size: 0.75rem;
+    line-height: 1;
+  }
+}
